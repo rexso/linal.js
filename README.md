@@ -116,7 +116,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * transposed - returns the transposed version of the matrix
 
 ## Building
-To initialze the build environment, and install the required node modules:
+To initialize the build environment, and install the required node modules:
 >npm install
  
 To run JavaScript validation, and build the ***linal.min.js*** minimized version:
