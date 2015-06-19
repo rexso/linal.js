@@ -1,0 +1,35 @@
+{
+	"name": "@rexso/linal.js",
+	"version": "0.1.0",
+	"description": "Object Oriented Linear Algebra Library in JavaScript",
+	"keywords": [
+		"webgl",
+		"javascript",
+		"math",
+		"linear algebra"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Remi A. Solås",
+		"email": "remi@npolar.no",
+		"url": "https://github.com/rexso"
+	},
+	"files": [
+		"linal.js",
+		"linal.min.js",
+		"LICENCE",
+		"README.md",
+		"gulpfile.js"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rexso/linal.js"
+	},
+	"devDependencies": {
+		"gulp": "^3.8.11",
+		"gulp-concat": "^2.5.0",
+		"gulp-jshint": "^1.9.2",
+		"gulp-uglify": "^1.1.0"
+	},
+	"main": "linal.js"
+}
