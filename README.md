@@ -1,5 +1,7 @@
 # linal.js
-Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
+Object Oriented Linear Algebra Library in JavaScript.
+
+All class methods have parameter checks to ensure type-safety. Sensible error messages are thrown if the user tries to provide methods with invalid arguments, or assign properties with erroneous values. For WebGL compatibility, all classes provide an **array**-property, which holds a Float32Array.
 
 ## Classes
 
@@ -19,6 +21,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * swap(vec2)
     * toString()
   * Properties:
+    * array - returns a Float32Array with the vector values
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
@@ -43,6 +46,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * swap(vec3)
     * toString()
   * Properties:
+    * array - returns a Float32Array with the vector values
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
@@ -64,6 +68,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * swap(vec4)
     * toString()
   * Properties:
+    * array - returns a Float32Array with the vector values
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
@@ -88,6 +93,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * toString()
     * transpose()
   * Properties:
+    * array - returns a Float32Array with the matrix values
     * copy - returns a copy of the matrix
     * determinant - returns the determinant of the matrix
     * inverse - returns the inverse version of the matrix
@@ -109,6 +115,7 @@ Object Oriented Linear Algebra Library in JavaScript, compatible with WebGL.
     * translate(xOrVec3, y, z)
     * transpose()
   * Properties:
+    * array - returns a Float32Array with the matrix values
     * copy - returns a copy of the matrix
     * determinant - returns the determinant of the matrix
     * inverse - returns the inverse version of the matrix
