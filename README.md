@@ -25,6 +25,8 @@ All class methods have parameter checks to ensure type-safety. Sensible error me
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
+    * x - returns the x value (first element) of the vector
+    * y - returns the y value (second element) of the vector
 
 * **linal.Vec3** - 3D Vector class
   * Functions:
@@ -50,9 +52,12 @@ All class methods have parameter checks to ensure type-safety. Sensible error me
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
+    * x - returns the x value (first element) of the vector
     * xy - returns a Vec2 instance of x and y
     * xz - returns a Vec2 instance of x and z
+    * y - returns the y value (second element) of the vector
     * yz - returns a Vec2 instance of y and z
+    * z - returns the z value (third element) of the vector
 
 * **linal.Vec4** - 4D Vector class
   * Functions:
@@ -72,16 +77,20 @@ All class methods have parameter checks to ensure type-safety. Sensible error me
     * copy - returns a copy of the vector
     * length - returns the length of the vector
     * normalized - returns a normalized version of the vector
+    * x - returns the x value (first element) of the vector
     * xy - returns a Vec2 instance of x and y
     * xyz - returns a Vec3 instance of x, y and z
     * xyw - returns a Vec3 instance of x, y and w
     * xz - returns a Vec2 instance of x and z
     * xzw - returns a Vec3 instance of x, z and w
     * xw - returns a Vec2 instance of x and w
+    * y - returns the y value (second element) of the vector
     * yz - returns a Vec2 instance of y and z
     * yzw - returns a Vec3 instance of y, z and w
     * yw - returns a Vec2 instance of y and w
+    * z - returns the z value (third element) of the vector
     * zw - returns a Vec2 instance of z and w
+    * w - returns the w value (fourth element) of the vector
 
 * **linal.Mat33** - 3x3 Matrix class
   * Functions:
