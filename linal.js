@@ -1,6 +1,6 @@
+var linal = { VERSION: "0.1.1" };
+
 (function() {
-	var VERSION = "0.1.0";
-	
 	function definedNotNull(value) {
 		return (value !== undefined && value !== null);
 	}
@@ -277,6 +277,8 @@
 		assign: function(xScalarOrVec3, y, z) {
 			if(xScalarOrVec3 instanceof Vector3) {
 				return this.assign(xScalarOrVec3.x, xScalarOrVec3.y, xScalarOrVec3.z);
+			} else if(xScalarOrVec3 instanceof Vector2) {
+				return this.assign(xScalarOrVec3.x, xScalarOrVec3.y, (isNumber(y) ? y : 0.0));
 			} else if(isNumber(xScalarOrVec3) && !definedNotNull(y) && !definedNotNull(z)) {
 				return this.assign(xScalarOrVec3, xScalarOrVec3, xScalarOrVec3);
 			} else {
@@ -518,7 +520,7 @@
 		}
 	};
 	
-	function Vector4(xScalarOrVec4, y, z, w) {
+	function Vector4(xScalarOrVec, y, z, w) {
 		// Define read-only member array
 		Object.defineProperty(this, 'array', {
 			value: new Float32Array([ 0, 0, 0, 0 ])
@@ -541,8 +543,8 @@
 		}, this);
 		
 		// Call assign method if parameters are set
-		if(definedNotNull(xScalarOrVec4)) {
-			this.assign(xScalarOrVec4, y, z, w);
+		if(definedNotNull(xScalarOrVec)) {
+			this.assign(xScalarOrVec, y, z, w);
 		}
 	}
 	
@@ -1299,16 +1301,14 @@
 		}
 	};
 	
-	window.linal = {
-		VERSION:	VERSION,
-		Vec2:		Vector2,
-		Vec3:		Vector3,
-		Vec4:		Vector4,
-		Mat33:		Matrix33,
-		Mat44:		Matrix44
-	};
+	linal.Vec2 = Vector2;
+	linal.Vec3 = Vector3;
+	linal.Vec4 = Vector4;
+	linal.Mat33 = Matrix33;
+	linal.Mat44 = Matrix44;
 	
-	if(typeof window.module == 'object') {
-		module.exports = window.linal;
-	}
 })();
+
+if(typeof module == 'object') {
+	module.exports = linal;
+}
