@@ -131,6 +131,29 @@ All class methods have parameter checks to ensure type-safety. Sensible error me
     * translation - returns a Vec3 instance of the matrix translation
     * transposed - returns the transposed version of the matrix
 
+## Examples
+
+Basic Vector usage:
+ ```javascript
+var a = new linal.Vec3(1, 2, 3);       // Create a new Vec3 instance with values 1, 2, 3
+var b = new linal.Vec3(1.5, 2.5, 3.5); // Create a new Vec3 instance with values 1.5, 2.5, 3.5
+a.add(0.5);                            // Add scalar value 0.5 to a
+a.multiply(b);                         // Multiplies a with b
+a.toString();                          // Yields (2.25, 6.25, 12.25)
+var c = b.xy;                          // Creates a new Vec2 instance with values 1.5, 2.5 (from b)
+c.subtract(0.5).normalized.length;     // Subtracts 0.5 from c, and yields the normalized length
+```
+
+Basic Matrix usage:
+```javascript
+var a = new linal.Mat44();             // Create a new Mat44 instance (defaults to identity matrix)
+var b = new linal.Vec3(0, 1, 0);       // Create a new Vec3 instance with values 0, 1, 0
+a.translate(4, 0, 0).scale(2, 2, 2);   // Translates a 4 units along the x axis, and scales by 2
+a.inverse.rotate(Math.PI, 0, 1, 0);    // Yields the inverse of a, rotated by PI around the y axis
+a.copy.invert().rotate(Math.PI, b);    // Yields the same result as the previous operation
+a.invert();                            // Inverts a (the previous operation did not modify a)
+```
+
 ## Building
 To initialize the build environment, and install the required node modules:
 >npm install
