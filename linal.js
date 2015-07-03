@@ -1,4 +1,4 @@
-var linal = { VERSION: "0.1.1" };
+var linal = { VERSION: "0.1.2" };
 
 (function() {
 	function definedNotNull(value) {
@@ -316,7 +316,7 @@ var linal = { VERSION: "0.1.1" };
 		
 		distance: function(vec3) {
 			if(vec3 instanceof Vector3) {
-				var dx = this.x - vec3.x, dy = this.y - vec2.y, dz = this.z - vec3.z;
+				var dx = this.x - vec3.x, dy = this.y - vec3.y, dz = this.z - vec3.z;
 				return Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
 			} else {
 				throw invalidParameter('vec3', vec3, 'Vector3', 'Vector3.distance');
@@ -376,7 +376,7 @@ var linal = { VERSION: "0.1.1" };
 		},
 		
 		minimize: function(vec3) {
-			if(vec3 instanceof Vector2) {
+			if(vec3 instanceof Vector3) {
 				this.x = Math.min(this.x, vec3.x);
 				this.y = Math.min(this.y, vec3.y);
 				this.z = Math.min(this.z, vec3.z);
@@ -400,7 +400,7 @@ var linal = { VERSION: "0.1.1" };
 				this.assign(
 					(this.x * value.array[0]) + (this.y * value.array[3]) + (this.z * value.array[6]),
 					(this.x * value.array[1]) + (this.y * value.array[4]) + (this.z * value.array[7]),
-					(this.x * value.array[2]) + (this.y * value.array[5]) + (this.z * value.array[9])
+					(this.x * value.array[2]) + (this.y * value.array[5]) + (this.z * value.array[8])
 				);
 			} else if(value instanceof Matrix44) {
 				this.assign(
