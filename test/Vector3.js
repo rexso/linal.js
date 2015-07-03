@@ -58,6 +58,7 @@ describe('Vector3', function() {
 				var b = new linal.Vec3(a).add(2);
 				assert.floatEqual(a.x + 2, b.x);
 				assert.floatEqual(a.y + 2, b.y);
+				assert.floatEqual(a.z + 2, b.z);
 			});
 			
 			it('vec3', function() {
@@ -66,6 +67,7 @@ describe('Vector3', function() {
 				var c = new linal.Vec3(a).add(b);
 				assert.floatEqual(a.x + b.x, c.x);
 				assert.floatEqual(a.y + b.y, c.y);
+				assert.floatEqual(a.z + b.z, c.z);
 			});
 		});
 		
@@ -302,6 +304,14 @@ describe('Vector3', function() {
 		});
 		
 		describe('subtract', function() {
+			it('scalar', function() {
+				var a = new linal.Vec3(1, 2, 3);
+				var b = new linal.Vec3(a).subtract(2);
+				assert.floatEqual(a.x - 2, b.x);
+				assert.floatEqual(a.y - 2, b.y);
+				assert.floatEqual(a.z - 2, b.z);
+			});
+			
 			it('vec3', function() {
 				var a = new linal.Vec3(1, 2, 3);
 				var b = new linal.Vec3(3, 4, 5);
@@ -309,14 +319,6 @@ describe('Vector3', function() {
 				assert.floatEqual(a.x - b.x, c.x);
 				assert.floatEqual(a.y - b.y, c.y);
 				assert.floatEqual(a.z - b.z, c.z);
-			});
-			
-			it('scalar', function() {
-				var a = new linal.Vec3(1, 2, 3);
-				var b = new linal.Vec3(a).subtract(2);
-				assert.floatEqual(a.x - 2, b.x);
-				assert.floatEqual(a.y - 2, b.y);
-				assert.floatEqual(a.z - 2, b.z);
 			});
 		});
 		
